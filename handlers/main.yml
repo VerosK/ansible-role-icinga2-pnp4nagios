@@ -1,0 +1,4 @@
+- name: restart npcd
+  service:
+    name: '{{ pnp4nagios_npcd_service }}'
+    state: restarted

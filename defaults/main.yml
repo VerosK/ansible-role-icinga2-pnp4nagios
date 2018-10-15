@@ -1,0 +1,6 @@
+pnp4nagios_npcd_service: npcd
+pnp4nagios_npcd_service_state: started
+pnp4nagios_npcd_service_enabled: yes
+
+
+pnp4nagios_icingaweb2_packages: icingaweb2-module-pnp

@@ -1,0 +1,12 @@
+- name: Add pnp4nagios
+  yum:
+    name: pnp4nagios
+    state: present
+
+- name: Provide config file
+  template:
+    src: npcd.cfg.j2
+    dest: /etc/pnp4nagios/npcd.cfg
+    backup: yes
+  notify: restart npcd
+

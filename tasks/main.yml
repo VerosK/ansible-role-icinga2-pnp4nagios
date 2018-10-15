@@ -1,0 +1,13 @@
+- include: install-redhat.yml
+  when: ansible_distribution == "CentOS"
+
+- name: Check distro
+  fail:
+      msg: "Only CentOS is supported, but distribution is {{ ansible_distribution }}"
+  when: ansible_distribution != "CentOS"
+
+- name: Ensure npcd service state
+  service:
+      name: '{{ pnp4nagios_npcd_service }}'
+      state: '{{ pnp4nagios_npcd_service_state }}'
+      enabled: '{{ pnp4nagios_npcd_service_enabled }}'
